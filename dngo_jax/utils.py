@@ -13,7 +13,7 @@ def split(array, nrows, ncols):
 
 def normalize(X):
 	''' Normalize batched inputs ''' 
-	X_mu, X_std = jnp.mean(X, axis=1), jnp.std(X, axis=1)
+	X_mu, X_std = jnp.mean(X, axis=0), jnp.std(X, axis=0)
 	X_bar = (X - X_mu) / X_std
 	return X_bar, X_mu, X_std
 
